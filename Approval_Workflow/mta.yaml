@@ -1,0 +1,17 @@
+_schema-version: "3.2"
+ID: Approval_Workflow
+version: 0.0.1
+modules:
+- name: approvals
+  type: com.sap.application.content
+  path: approvals
+  requires:
+  - name: wm_workflow
+    parameters:
+      content-target: true
+resources:
+- name: wm_workflow
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: workflow
+    service-plan: lite

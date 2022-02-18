@@ -1,0 +1,48 @@
+{
+    "id": "startForm",
+    "schemaVersion": "1.1.0",
+    "name": "startForm",
+    "revision": "1.0",
+    "type": "start",
+    "readOnly": false,
+    "content": [
+        {
+            "id": "first_name",
+            "type": "string",
+            "label": "First Name",
+            "readOnly": false,
+            "value": "${context.userData.firstName}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "last_name",
+            "type": "string",
+            "label": "Last Name",
+            "readOnly": false,
+            "value": "${context.userData.lastName}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "business",
+            "type": "string",
+            "label": "Business",
+            "readOnly": false,
+            "value": "${context.userData.BU}",
+            "constraints": {
+                "required": true
+            }
+        }
+    ],
+    "actions": [
+        {
+            "id": "action1",
+            "text": "Send Request",
+            "workflowDefinitionId": "approvals",
+            "workflowPath": "/home/user/projects/First_Workflow/approvals/workflows/approvals.workflow"
+        }
+    ]
+}
