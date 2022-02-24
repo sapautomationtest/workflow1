@@ -1,0 +1,9 @@
+{
+  "product": "Hamlet (Paperback)",
+  "inStock": true,
+  "inventory": 20000,
+  "price": 7.49,
+  "publishingDate": "1600-04-23T18:25:43.511Z",
+  "author": { "name": "William Shakespeare" },
+  "publishers": [ "Simon & Brown", "SparkNotes", "Dover Publications" ]
+}

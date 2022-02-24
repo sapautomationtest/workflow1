@@ -1,0 +1,108 @@
+{
+    "id": "buapprovalform",
+    "schemaVersion": "1.1.0",
+    "name": "BuApprovalForm",
+    "revision": "1.0",
+    "type": "task",
+    "readOnly": false,
+    "content": [
+        {
+            "id": "request",
+            "type": "section",
+            "title": "Request",
+            "content": []
+        },
+        {
+            "id": "approver",
+            "type": "section",
+            "title": "Approver Comment",
+            "content": [
+                {
+                    "id": "comment",
+                    "type": "string",
+                    "label": "Comment",
+                    "readOnly": false,
+                    "value": "${context.Approver.Comment}",
+                    "control": {
+                        "type": "TextArea",
+                        "properties": {
+                            "height": "small"
+                        }
+                    },
+                    "constraints": {
+                        "required": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": "comments_history",
+            "type": "section",
+            "title": "Comments History",
+            "content": [
+                {
+                    "id": "comments",
+                    "type": "collection",
+                    "title": "Comments",
+                    "addEnabled": false,
+                    "deleteEnabled": false,
+                    "value": "${context.Comments}",
+                    "content": [
+                        {
+                            "id": "user",
+                            "type": "string",
+                            "label": "User",
+                            "readOnly": false,
+                            "value": "${item.User}",
+                            "constraints": {
+                                "required": false
+                            }
+                        },
+                        {
+                            "id": "role",
+                            "type": "string",
+                            "label": "Role",
+                            "readOnly": false,
+                            "value": "${item.Role}",
+                            "constraints": {
+                                "required": false
+                            }
+                        },
+                        {
+                            "id": "decision",
+                            "type": "string",
+                            "label": "Decision",
+                            "readOnly": false,
+                            "value": "${item.Decision}",
+                            "constraints": {
+                                "required": false
+                            }
+                        },
+                        {
+                            "id": "comment",
+                            "type": "string",
+                            "label": "Comment",
+                            "readOnly": false,
+                            "value": "${item.Comment}",
+                            "constraints": {
+                                "required": false
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "decisions": [
+        {
+            "id": "approve",
+            "text": "Approve",
+            "decisionType": "positive"
+        },
+        {
+            "id": "reject",
+            "text": "Reject",
+            "decisionType": "negative"
+        }
+    ]
+}
