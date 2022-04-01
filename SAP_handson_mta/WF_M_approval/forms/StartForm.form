@@ -1,0 +1,107 @@
+{
+    "id": "StartForm",
+    "schemaVersion": "1.1.0",
+    "name": "ApprovalStartForm",
+    "revision": "1.0",
+    "type": "start",
+    "readOnly": false,
+    "content": [
+        {
+            "id": "approval_scenario",
+            "type": "section",
+            "title": "Approval Scenario",
+            "content": [
+                {
+                    "id": "approval_scenario",
+                    "type": "subsection",
+                    "title": "Approval Scenario",
+                    "content": [
+                        {
+                            "id": "scenario",
+                            "type": "string",
+                            "label": "Scenario",
+                            "readOnly": false,
+                            "value": "${context.Scenario}",
+                            "control": {
+                                "type": "Dropdown",
+                                "properties": {
+                                    "items": [
+                                        {
+                                            "value": "IFRS17",
+                                            "displayValue": "IFRS17 CFO Sign off "
+                                        },
+                                        {
+                                            "value": "Project x",
+                                            "displayValue": "Project x Sign off "
+                                        }
+                                    ]
+                                }
+                            },
+                            "constraints": {
+                                "required": true,
+                                "enum": [
+                                    "IFRS17",
+                                    "Project x"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list_of_business_units",
+            "type": "section",
+            "title": "List of Business Units",
+            "content": [
+                {
+                    "id": "business_unit",
+                    "type": "string",
+                    "label": "Business Unit",
+                    "readOnly": false,
+                    "value": "${context.BuList}",
+                    "control": {
+                        "type": "Dropdown",
+                        "properties": {
+                            "items": [
+                                {
+                                    "value": "ALL",
+                                    "displayValue": "*All Business Units*"
+                                },
+                                {
+                                    "value": "AE",
+                                    "displayValue": "Middle East"
+                                },
+                                {
+                                    "value": "AR",
+                                    "displayValue": "Argentina"
+                                },
+                                {
+                                    "value": "AU",
+                                    "displayValue": "Australia"
+                                }
+                            ]
+                        }
+                    },
+                    "constraints": {
+                        "required": true,
+                        "enum": [
+                            "ALL",
+                            "AE",
+                            "AR",
+                            "AU"
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "id": "action1",
+            "text": "Start BU approval workflow",
+            "workflowDefinitionId": "approvals",
+            "workflowPath": "/home/user/projects/workflow1/SAP_handson_mta/WF_M_approval/workflows/WF_BU_approval.workflow"
+        }
+    ]
+}
