@@ -48,8 +48,10 @@ if (EquipmentInfo.length > 0) {
     EquipInfo.push(equip);
 }*/
 var mail = response.email;
+var bunit = $.context.userData.BU;
 var approval = {
-    approver: mail
+    approver: mail,
+    BU: bunit
 };
 
 $.context.approval = approval;

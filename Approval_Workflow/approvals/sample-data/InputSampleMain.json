@@ -1,0 +1,16 @@
+{
+    "userData": {
+        "firstName": "Hermione",
+        "lastName": "Granger",
+        "commentForApprover": "Please, approve this request",
+        "BUList": [
+            {
+                "BU":"UK"
+            }
+        ]
+    },
+    "projectData": {
+        "projectID": "PRJ-XXXX",
+        "description": "Project Description"
+    }
+}

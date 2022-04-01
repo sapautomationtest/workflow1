@@ -1,7 +1,7 @@
 {
-    "id": "approvalform",
+    "id": "rejectionform",
     "schemaVersion": "1.1.0",
-    "name": "approvalForm",
+    "name": "RejectionForm",
     "revision": "1.0",
     "type": "task",
     "readOnly": false,
@@ -64,58 +64,6 @@
                     "label": "Description",
                     "readOnly": true,
                     "value": "${context.projectData.description}",
-                    "constraints": {
-                        "required": false
-                    }
-                }
-            ]
-        },
-        {
-            "id": "please_choose",
-            "type": "section",
-            "title": "Please, choose",
-            "content": [
-                {
-                    "id": "decision",
-                    "type": "string",
-                    "label": "Decision",
-                    "readOnly": false,
-                    "value": "${context.approval.decision}",
-                    "control": {
-                        "type": "Dropdown",
-                        "properties": {
-                            "items": [
-                                {
-                                    "value": "Y",
-                                    "displayValue": "Approve"
-                                },
-                                {
-                                    "value": "R",
-                                    "displayValue": "Reject"
-                                }
-                            ]
-                        }
-                    },
-                    "constraints": {
-                        "required": true,
-                        "enum": [
-                            "Y",
-                            "R"
-                        ]
-                    }
-                },
-                {
-                    "id": "comments",
-                    "type": "string",
-                    "label": "Comments",
-                    "readOnly": false,
-                    "value": "${context.approval.comments}",
-                    "control": {
-                        "type": "TextArea",
-                        "properties": {
-                            "height": "medium"
-                        }
-                    },
                     "constraints": {
                         "required": false
                     }
