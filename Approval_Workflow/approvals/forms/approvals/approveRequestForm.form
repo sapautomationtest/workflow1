@@ -1,0 +1,176 @@
+{
+    "id": "approveRequestForm",
+    "schemaVersion": "1.1.0",
+    "name": "approveRequestForm",
+    "revision": "1",
+    "type": "task",
+    "readOnly": false,
+    "content": [
+        {
+            "id": "requestor",
+            "type": "section",
+            "title": "Requestor",
+            "content": [
+                {
+                    "id": "name",
+                    "type": "string",
+                    "label": "Name",
+                    "readOnly": false,
+                    "value": "${context.userData.fullName}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "comments",
+                    "type": "string",
+                    "label": "Comments",
+                    "readOnly": false,
+                    "value": "${context.userData.commentForApprover}",
+                    "constraints": {
+                        "required": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": "bu_info",
+            "type": "section",
+            "title": "BU info",
+            "content": [
+                {
+                    "id": "business_unit",
+                    "type": "string",
+                    "label": "Business Unit",
+                    "readOnly": true,
+                    "value": "${context.userData.BU}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "comment",
+                    "type": "string",
+                    "label": "Comment",
+                    "readOnly": true,
+                    "value": "${context.BUComment}",
+                    "control": {
+                        "type": "TextArea",
+                        "properties": {
+                            "height": "small"
+                        }
+                    },
+                    "constraints": {
+                        "required": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": "please_choose",
+            "type": "section",
+            "title": "Please, choose",
+            "content": [
+                {
+                    "id": "decision",
+                    "type": "string",
+                    "label": "Decision",
+                    "readOnly": false,
+                    "value": "${context.approval.decision}",
+                    "control": {
+                        "type": "Dropdown",
+                        "properties": {
+                            "items": [
+                                {
+                                    "value": "Y",
+                                    "displayValue": "Approve"
+                                },
+                                {
+                                    "value": "R",
+                                    "displayValue": "Reject"
+                                }
+                            ]
+                        }
+                    },
+                    "constraints": {
+                        "required": true,
+                        "enum": [
+                            "Y",
+                            "R"
+                        ]
+                    }
+                },
+                {
+                    "id": "comment",
+                    "type": "string",
+                    "label": "Comments",
+                    "readOnly": false,
+                    "value": "${context.approval.comments}",
+                    "control": {
+                        "type": "TextArea",
+                        "properties": {
+                            "height": "medium"
+                        }
+                    },
+                    "constraints": {
+                        "required": true
+                    }
+                }
+            ]
+        },
+        {
+            "id": "comments_history",
+            "type": "section",
+            "title": "Comments History",
+            "content": [
+                {
+                    "id": "comments",
+                    "type": "collection",
+                    "title": "Comments",
+                    "addEnabled": false,
+                    "deleteEnabled": false,
+                    "value": "${context.comments}",
+                    "content": [
+                        {
+                            "id": "decision",
+                            "type": "string",
+                            "label": "Decision",
+                            "readOnly": true,
+                            "value": "${item.decision}",
+                            "constraints": {
+                                "required": false
+                            }
+                        },
+                        {
+                            "id": "from",
+                            "type": "string",
+                            "label": "From",
+                            "readOnly": true,
+                            "value": "${item.from}",
+                            "constraints": {
+                                "required": false
+                            }
+                        },
+                        {
+                            "id": "comment",
+                            "type": "string",
+                            "label": "Comment",
+                            "readOnly": true,
+                            "value": "${item.comment}",
+                            "constraints": {
+                                "required": false
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "decisions": [
+        {
+            "id": "submit",
+            "text": "Submit",
+            "decisionType": "positive"
+        }
+    ]
+}

@@ -1,0 +1,114 @@
+{
+    "id": "submitRequestForm",
+    "schemaVersion": "1.1.0",
+    "name": "submitRequestForm",
+    "revision": "1",
+    "type": "task",
+    "readOnly": false,
+    "content": [
+        {
+            "id": "requestor",
+            "type": "section",
+            "title": "Request",
+            "content": [
+                {
+                    "id": "name",
+                    "type": "string",
+                    "label": "Name",
+                    "readOnly": true,
+                    "value": "${context.userData.fullName}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "comment",
+                    "type": "string",
+                    "label": "Comment",
+                    "readOnly": true,
+                    "value": "${context.userData.commentForApprover}",
+                    "constraints": {
+                        "required": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": "bu_info",
+            "type": "section",
+            "title": "BU Info",
+            "content": [
+                {
+                    "id": "comment",
+                    "type": "string",
+                    "label": "Comment",
+                    "readOnly": false,
+                    "value": "${context.BUComment}",
+                    "control": {
+                        "type": "TextArea",
+                        "properties": {
+                            "height": "small"
+                        }
+                    },
+                    "constraints": {
+                        "required": true
+                    }
+                }
+            ]
+        },
+        {
+            "id": "comments_history",
+            "type": "section",
+            "title": "Comments History",
+            "content": [
+                {
+                    "id": "collection",
+                    "type": "collection",
+                    "title": "Comments",
+                    "addEnabled": false,
+                    "deleteEnabled": false,
+                    "value": "${context.comments}",
+                    "content": [
+                        {
+                            "id": "decision",
+                            "type": "string",
+                            "label": "Decision",
+                            "readOnly": true,
+                            "value": "${item.decision}",
+                            "constraints": {
+                                "required": false
+                            }
+                        },
+                        {
+                            "id": "from",
+                            "type": "string",
+                            "label": "From",
+                            "readOnly": true,
+                            "value": "${item.from}",
+                            "constraints": {
+                                "required": false
+                            }
+                        },
+                        {
+                            "id": "comment",
+                            "type": "string",
+                            "label": "Comment",
+                            "readOnly": true,
+                            "value": "${item.comment}",
+                            "constraints": {
+                                "required": false
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "decisions": [
+        {
+            "id": "submit",
+            "text": "Submit",
+            "decisionType": "positive"
+        }
+    ]
+}
