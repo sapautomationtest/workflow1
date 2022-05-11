@@ -10,34 +10,7 @@
             "id": "request",
             "type": "section",
             "title": "Request",
-            "content": [
-                {
-                    "id": "intro",
-                    "type": "string",
-                    "label": "Intro",
-                    "readOnly": true,
-                    "value": "${context.request.intro}",
-                    "control": {
-                        "type": "TextArea",
-                        "properties": {
-                            "height": "medium"
-                        }
-                    },
-                    "constraints": {
-                        "required": false
-                    }
-                },
-                {
-                    "id": "sharepoint_path",
-                    "type": "string",
-                    "label": "Sharepoint path",
-                    "readOnly": false,
-                    "value": "${context.request.path}",
-                    "constraints": {
-                        "required": false
-                    }
-                }
-            ]
+            "content": []
         },
         {
             "id": "approver",

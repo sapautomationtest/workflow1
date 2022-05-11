@@ -2,7 +2,7 @@
 	"contents": {
 		"2ca96dc9-2beb-45dc-8686-92b860c2039d": {
 			"classDefinition": "com.sap.bpm.wfs.Model",
-			"id": "BU Project Sign Off",
+			"id": "BuProjectSignOff",
 			"subject": "BU project sign-off",
 			"businessKey": "${context.requestId}",
 			"name": "approvals",
@@ -172,6 +172,12 @@
 			"name": ".",
 			"default": "e2eba33e-cb72-40d7-96d8-384becbff4fc"
 		},
+		"c54a0e25-7c32-422a-8125-996a3d25e446": {
+			"classDefinition": "com.sap.bpm.wfs.ScriptTask",
+			"reference": "/scripts/WF_BU_approval/processDecision.js",
+			"id": "scripttask5",
+			"name": "Process Submit"
+		},
 		"c6b99f32-5fe6-4ab6-b60a-80fba1b9ae0f": {
 			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
 			"id": "sequenceflow1",
@@ -244,6 +250,13 @@
 			"sourceRef": "c932e574-e2c3-498d-ad1e-b4c4708bcd23",
 			"targetRef": "39de2a4b-9814-40ba-8487-29ed83104b1b"
 		},
+		"8ee27df0-f902-497e-bffd-02938a50f0e9": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow17",
+			"name": "SequenceFlow17",
+			"sourceRef": "c54a0e25-7c32-422a-8125-996a3d25e446",
+			"targetRef": "afcd7356-4f12-4cd3-bce1-afae6870e0be"
+		},
 		"42fa7a2d-c526-4a02-b3ba-49b5168ba644": {
 			"classDefinition": "com.sap.bpm.wfs.ui.Diagram",
 			"symbols": {
@@ -278,8 +291,8 @@
 		},
 		"df898b52-91e1-4778-baad-2ad9a261d30e": {
 			"classDefinition": "com.sap.bpm.wfs.ui.StartEventSymbol",
-			"x": -10,
-			"y": 101,
+			"x": -160,
+			"y": 100,
 			"width": 32,
 			"height": 32,
 			"object": "11a9b5ee-17c0-4159-9bbf-454dcfdcd5c3"
@@ -294,7 +307,7 @@
 		},
 		"6bb141da-d485-4317-93b8-e17711df4c32": {
 			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "6,116.5 84,116.5",
+			"points": "-144,116 84,116",
 			"sourceSymbol": "df898b52-91e1-4778-baad-2ad9a261d30e",
 			"targetSymbol": "32f954de-adee-45bc-b75d-954e5df27bbc",
 			"object": "c6b99f32-5fe6-4ab6-b60a-80fba1b9ae0f"
@@ -388,7 +401,7 @@
 		},
 		"04f88925-0d42-45ec-947a-7cd895a60b04": {
 			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "1112,117 927,117 927,196.5 335,196.5 335,145.5",
+			"points": "1105,117 1105,196.5 335,196.5 335,145.5",
 			"sourceSymbol": "87422b5d-98da-4498-a233-78f891838770",
 			"targetSymbol": "4e80e03c-ffdf-4bed-a624-f73c96dc1516",
 			"object": "a963119c-39db-4bad-a573-69cac3f1cb76"
@@ -422,6 +435,21 @@
 			"targetSymbol": "87422b5d-98da-4498-a233-78f891838770",
 			"object": "228d4769-921e-4d03-b0e5-e53fae008b7b"
 		},
+		"2cbb6c70-dfe5-4a98-bf9b-94ea2de9a428": {
+			"classDefinition": "com.sap.bpm.wfs.ui.ScriptTaskSymbol",
+			"x": 440.25,
+			"y": 86.75,
+			"width": 100,
+			"height": 60,
+			"object": "c54a0e25-7c32-422a-8125-996a3d25e446"
+		},
+		"24994a82-5eef-4a49-9a6b-ae7384a79479": {
+			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
+			"points": "490.25,116.4375 600.875,116.4375",
+			"sourceSymbol": "2cbb6c70-dfe5-4a98-bf9b-94ea2de9a428",
+			"targetSymbol": "2dd1b9b7-7521-4b39-a49b-10952711f30c",
+			"object": "8ee27df0-f902-497e-bffd-02938a50f0e9"
+		},
 		"62d7f4ed-4063-4c44-af8b-39050bd44926": {
 			"classDefinition": "com.sap.bpm.wfs.LastIDs",
 			"terminateeventdefinition": 1,
@@ -432,34 +460,6 @@
 			"servicetask": 1,
 			"scripttask": 5,
 			"exclusivegateway": 2
-		},
-		"c54a0e25-7c32-422a-8125-996a3d25e446": {
-			"classDefinition": "com.sap.bpm.wfs.ScriptTask",
-			"reference": "/scripts/WF_BU_approval/processDecision.js",
-			"id": "scripttask5",
-			"name": "Process Submit"
-		},
-		"2cbb6c70-dfe5-4a98-bf9b-94ea2de9a428": {
-			"classDefinition": "com.sap.bpm.wfs.ui.ScriptTaskSymbol",
-			"x": 440.25,
-			"y": 86.75,
-			"width": 100,
-			"height": 60,
-			"object": "c54a0e25-7c32-422a-8125-996a3d25e446"
-		},
-		"8ee27df0-f902-497e-bffd-02938a50f0e9": {
-			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"id": "sequenceflow17",
-			"name": "SequenceFlow17",
-			"sourceRef": "c54a0e25-7c32-422a-8125-996a3d25e446",
-			"targetRef": "afcd7356-4f12-4cd3-bce1-afae6870e0be"
-		},
-		"24994a82-5eef-4a49-9a6b-ae7384a79479": {
-			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "490.25,116.4375 600.875,116.4375",
-			"sourceSymbol": "2cbb6c70-dfe5-4a98-bf9b-94ea2de9a428",
-			"targetSymbol": "2dd1b9b7-7521-4b39-a49b-10952711f30c",
-			"object": "8ee27df0-f902-497e-bffd-02938a50f0e9"
 		}
 	}
 }
